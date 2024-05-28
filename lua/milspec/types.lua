@@ -1,0 +1,25 @@
+--- @meta
+
+--- @class MilspecColors
+--- @field fg string
+--- @field bg string
+--- @field gray string
+--- @field bgGray string
+--- @field fgGray string
+--- @field core string
+--- @field blue string
+--- @field green string
+--- @field orange string
+--- @field red string
+--- @field vermilion string
+--- @field rose string
+--- @field violet string
+--- @field indigo string
+--- @field cerulean string
+--- @field turquoise string
+--- @field forest string
+--- @field lime string
+--- @field gold string
+--- @field sepia string
+
+--- @alias MilspecVariant "light" | "dark"

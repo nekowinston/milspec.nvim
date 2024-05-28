@@ -1,0 +1,1 @@
+require("milspec").load("light")
