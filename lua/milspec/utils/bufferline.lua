@@ -29,6 +29,7 @@ function M.get(variant)
 				fg = active.fg,
 				bg = active.bg,
 			},
+
 			tab_separator = {
 				fg = c.gray,
 				bg = inactive.bg,
@@ -42,6 +43,7 @@ function M.get(variant)
 				fg = c.fgGray,
 				bg = inactive.bg,
 			},
+
 			close_button = {
 				fg = c.fgGray,
 				bg = inactive.bg,
