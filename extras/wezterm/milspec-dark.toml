@@ -1,0 +1,83 @@
+[colors]
+ansi = [
+  "#1c2127",
+  "#fa999c",
+  "#72ca9b",
+  "#fbb360",
+  "#8abbff",
+  "#ff66a1",
+  "#68c1ee",
+  "#ffffff",
+]
+background = "#1c2127"
+brights = [
+  "#c5cbd3",
+  "#ff9980",
+  "#62d96b",
+  "#d0b090",
+  "#68c1ee",
+  "#d69fd6",
+  "#7ae1d8",
+  "#c5cbd3",
+]
+compose_cursor = "#ff66a1"
+cursor_bg = "#ffffff"
+cursor_border = "#ffffff"
+cursor_fg = "#1c2127"
+foreground = "#ffffff"
+scrollbar_thumb = "#c5cbd3"
+selection_bg = "#404854"
+selection_fg = "#ffffff"
+split = "#c5cbd3"
+visual_bell = "#c5cbd3"
+
+[colors.indexed]
+
+[colors.tab_bar]
+background = "#1c2127"
+inactive_tab_edge = "#c5cbd3"
+
+[colors.tab_bar.active_tab]
+bg_color = "#8abbff"
+fg_color = "#1c2127"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#1c2127"
+fg_color = "#ffffff"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#404854"
+fg_color = "#ffffff"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#404854"
+fg_color = "#ffffff"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#c5cbd3"
+fg_color = "#1c2127"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[metadata]
+aliases = []
+author = "nekowinston"
+name = "milspec (dark)"
