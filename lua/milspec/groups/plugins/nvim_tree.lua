@@ -10,6 +10,8 @@ M.get = function(o, c)
 		NvimTreeFolderName = { fg = c.cerulean },
 		NvimTreeFolderIcon = { fg = c.cerulean },
 		NvimTreeIndentMarker = { fg = c.gray },
+		NvimTreeOpenedFolderName = { link = "NvimTreeFolderName" },
+		NvimTreeEmptyFolderName = { link = "NvimTreeFolderName" },
 	}
 end
 
