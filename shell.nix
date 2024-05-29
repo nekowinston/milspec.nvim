@@ -4,6 +4,8 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     lua-language-server
+    nodePackages.prettier
     stylua
+    vivid
   ];
 }

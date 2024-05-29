@@ -1,0 +1,232 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/sharkdp/vivid/master/schemas/theme.json
+colors:
+  fg: "ffffff"
+  bg: "1c2127"
+  gray: "c5cbd3"
+  bgGray: "404854"
+  fgGray: "d3d8de"
+  core: "111418"
+  blue: "8abbff"
+  green: "72ca9b"
+  orange: "fbb360"
+  red: "fa999c"
+  vermilion: "ff9980"
+  rose: "ff66a1"
+  violet: "d69fd6"
+  indigo: "bdadff"
+  cerulean: "68c1ee"
+  turquoise: "7ae1d8"
+  forest: "62d96b"
+  lime: "d4f17e"
+  gold: "fbd065"
+  sepia: "d0b090"
+
+core:
+  normal_text: &fg
+    foreground: fg
+  regular_file: *fg
+  reset_to_normal: *fg
+
+  directory:
+    foreground: blue
+
+  symlink: &rose
+    foreground: rose
+  multi_hard_link: *rose
+
+  fifo: &rose_bg
+    foreground: bg
+    background: rose
+  socket: *rose_bg
+  door: *rose_bg
+
+  block_device: &cerulean_bg
+    foreground: bg
+    background: cerulean
+  character_device: *cerulean_bg
+
+  broken_symlink: &bg_red
+    foreground: bg
+    background: red
+  missing_symlink_target: *bg_red
+
+  setuid: {}
+  setgid: {}
+  file_with_capability: {}
+  sticky_other_writable: {}
+  other_writable: {}
+  sticky: {}
+  executable_file:
+    foreground: blue
+    font-style: italic
+
+text:
+  special:
+    foreground: bg
+    background: gold
+
+  todo:
+    foreground: turquoise
+    font-style: bold
+
+  licenses:
+    foreground: orange
+
+  configuration:
+    foreground: gold
+    dockerfile:
+      foreground: blue
+    nix:
+      foreground: blue
+
+  other:
+    foreground: gold
+
+markup:
+  foreground: fg
+
+programming:
+  source:
+    foreground: green
+
+    basic:
+      foreground: violet
+    clojure:
+      foreground: blue
+    crystal:
+      foreground: fg
+    csharp:
+      foreground: violet
+    css:
+      foreground: blue
+    cxx:
+      foreground: blue
+    d:
+      foreground: red
+    dart:
+      foreground: blue
+    diff:
+      foreground: gold
+    elixir:
+      foreground: violet
+    elm:
+      foreground: blue
+    emacs:
+      foreground: violet
+    fsharp:
+      foreground: violet
+    gcode:
+      foreground: gold
+    go:
+      foreground: blue
+    groovy:
+      foreground: cerulean
+    haskell:
+      foreground: blue
+    hack:
+      foreground: gold
+    hare:
+      foreground: fg
+    ipython:
+      foreground: blue
+    java:
+      foreground: fg
+    javascript:
+      foreground: gold
+    julia:
+      foreground: violet
+    kotlin:
+      foreground: violet
+    latex:
+      foreground: turquoise
+    less:
+      foreground: blue
+    llvm:
+      foreground: gray
+    lisp:
+      foreground: violet
+    lua:
+      foreground: blue
+    mathematica:
+      foreground: red
+    mojo:
+      foreground: red
+    nim:
+      foreground: gold
+    ocaml:
+      foreground: orange
+    pascal:
+      foreground: blue
+    perl:
+      foreground: blue
+    php:
+      foreground: blue
+    powershell:
+      foreground: blue
+    purescript:
+      foreground: fg
+    python:
+      foreground: blue
+    r:
+      foreground: blue
+    raku:
+      foreground: violet
+    ruby:
+      foreground: red
+    rust:
+      foreground: orange
+    sass:
+      foreground: rose
+    scala:
+      foreground: red
+    shell:
+      foreground: green
+    sql:
+      foreground: orange
+    typescript:
+      foreground: blue
+    v:
+      foreground: blue
+    viml:
+      foreground: green
+    zig:
+      foreground: orange
+
+  tooling:
+    foreground: turquoise
+
+    vsc:
+      git:
+        foreground: orange
+      hg:
+        foreground: blue
+
+      packaging:
+        go:
+          foreground: blue
+        python:
+          foreground: blue
+        ruby:
+          foreground: red
+        v:
+          foreground: blue
+
+    continuous-integration:
+      foreground: green
+
+media:
+  foreground: rose
+
+office:
+  foreground: red
+
+archives:
+  foreground: sepia
+  font-style: underline
+
+executable:
+  foreground: red
+  font-style: bold
+
+unimportant:
+  foreground: bgGray
