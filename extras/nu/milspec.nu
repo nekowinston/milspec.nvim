@@ -81,25 +81,27 @@ export def main [
   let colors = ($variants | get $variant)
 
   return {
-    # table colors
+    ### TABLE APPEARANCE ###
     separator: $colors.bgGray
-    # same as number
-    row_index: $colors.orange
-
-    # no fg, no bg, attr none effectively turns this off
-    leading_trailing_space_bg: { attr: n }
     header: {
       fg: $colors.fg
       attr: b
     }
+    # same as number
+    row_index: $colors.orange
+    # trailing text in cells
+    leading_trailing_space_bg: {
+      fg: $colors.green
+      bg: $colors.bgGray
+    }
 
-    cell-path: $colors.cerulean
+    ### PROMPT ###
+    # auto-suggest
     hints: $colors.gray
-
-    list: $colors.fg
-    shape_list: $colors.fg
-
-    search_result: { bg: $colors.vermilion fg: $colors.bg }
+    search_result: {
+      fg: $colors.bg
+      bg: $colors.vermilion
+    }
 
     ### STRINGS ###
     string: $colors.green
@@ -130,6 +132,9 @@ export def main [
     shape_pipe: $colors.turquoise
     # `out>`/`err>` redirection
     shape_redirection: $colors.turquoise
+    # `[1, 2, 3]` brackets
+    list: $colors.turquoise
+    shape_list: $colors.turquoise
     # `[[1, 2] [3, 4]]` brackets
     shape_table: $colors.turquoise
     # `{ foo: "bar" }` dictionaries
@@ -154,7 +159,7 @@ export def main [
     int: $colors.orange
     shape_int: $colors.orange
 
-    # special indicators
+    ### SPECIAL INDICATORS ###
     filesize: { |el|
       if $relative {
         if $el < 1mb {
@@ -189,6 +194,7 @@ export def main [
     duration: $colors.rose
     shape_datetime: $colors.rose
 
+    ### FILESYSTEM ###
     shape_directory: {
       fg: $colors.rose
       attr: u
@@ -196,14 +202,14 @@ export def main [
     shape_filepath: $colors.rose
     shape_globpattern: $colors.rose
 
-    # functions
+    ### FUNCTIONS ###
     shape_external: $colors.blue
     shape_external_resolved: $colors.blue
-
+    # arguments
     shape_externalarg: $colors.vermilion
     shape_flag: $colors.turquoise
 
-    ### keywords
+    ### KEYWORDS ###
     shape_internalcall: $colors.violet
     shape_keyword: $colors.violet
     # keywords like `null`
@@ -216,21 +222,22 @@ export def main [
     }
     shape_signature: $colors.gold
 
-    ### variables
+    ### VARIABLES ###
+    cell-path: $colors.cerulean
     shape_vardecl: $colors.fg
     shape_variable: $colors.turquoise
 
-    ### syntax error indicators
+    ### SYNTAX ERROR INDICATORS ###
     shape_garbage: {
       fg: $colors.bg,
       bg: $colors.red,
       attr: b
     }
 
-    ### undocumented, unused colors
-    shape_literal: { attr: n}
-    shape_custom: { attr: n}
-    shape_match_pattern: { attr: n}
-    empty: { attr: n}
+    ### UNDOCUMENTED, UNUSED COLORS ###
+    shape_literal: { attr: n }
+    shape_custom: { attr: n }
+    shape_match_pattern: { attr: n }
+    empty: { attr: n }
   }
 }
