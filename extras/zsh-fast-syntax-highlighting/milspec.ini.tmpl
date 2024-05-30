@@ -1,0 +1,81 @@
+# vim:ft=dosini
+[base]
+default          = #{{ fg }}
+unknown-token    = #{{ red }},bold
+commandseparator = #{{ turquoise }}
+redirection      = #{{ turquoise }}
+here-string-tri  = #{{ fgGray }}
+here-string-text = #{{ fgGray }}
+here-string-var  = #{{ fgGray }}
+exec-descriptor  = none
+comment          = #{{ gray }}
+correct-subtle   = #{{ indigo }}
+incorrect-subtle = #{{ vermilion }}
+subtle-separator = none
+subtle-bg        = none
+secondary        =
+recursive-base   = #{{ fg }}
+
+[command-point]
+reserved-word     = #{{ violet }}
+subcommand        = #{{ vermilion }}
+alias             = #{{ blue }}
+suffix-alias      = #{{ blue }}
+global-alias      = #{{ blue }}
+builtin           = #{{ violet }}
+function          = #{{ blue }}
+command           = #{{ blue }}
+precommand        = #{{ violet }}
+hashed-command    = #{{ blue }}
+single-sq-bracket = #{{ gold }}
+double-sq-bracket = #{{ gold }}
+double-paren      = #{{ green }}
+
+[paths]
+path          = #{{ indigo }}
+pathseparator = #{{ indigo }}
+path-to-dir   = #{{ indigo }}
+globbing      = #{{ rose }}
+globbing-ext  = none
+
+[brackets]
+paired-bracket  = bold
+bracket-level-1 = #{{ red }}
+bracket-level-2 = #{{ gold }}
+bracket-level-3 = #{{ cerulean }}
+
+[arguments]
+single-hyphen-option   = #{{ turquoise }}
+double-hyphen-option   = #{{ turquoise }}
+back-quoted-argument   = #{{ turquoise }}
+single-quoted-argument = #{{ green }}
+double-quoted-argument = #{{ green }}
+dollar-quoted-argument = #{{ green }}
+optarg-string          = #{{ green }}
+optarg-number          = #{{ orange }}
+
+[in-string]
+back-dollar-quoted-argument           = #{{ orange }}
+back-or-dollar-double-quoted-argument = #{{ orange }}
+
+[other]
+variable             = #{{ orange }}
+assign               = none
+assign-array-bracket = none
+history-expansion    = none
+
+[math]
+mathvar = #{{ rose }}
+mathnum = #{{ orange }}
+matherr = #{{ red }},bold
+
+[for-loop]
+forvar  = #{{ fg }}
+fornum  = #{{ orange }}
+foroper = #{{ blue }}
+forsep  = #{{ blue }}
+
+[case]
+case-input       = #{{ orange }}
+case-parentheses = #{{ fg }}
+case-condition   = #{{ violet }}
