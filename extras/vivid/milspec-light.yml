@@ -29,6 +29,7 @@ core:
 
   directory:
     foreground: blue
+    font-style: underline
 
   symlink: &rose
     foreground: rose
@@ -229,4 +230,4 @@ executable:
   font-style: bold
 
 unimportant:
-  foreground: bgGray
+  foreground: gray
