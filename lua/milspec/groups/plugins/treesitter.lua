@@ -14,6 +14,9 @@ M.get = function(o, c)
 		-- make TOML look like JSON/yaml
 		tomlTable = { fg = c.gold },
 		tomlDotInKey = { link = "Delimiter" },
+
+		-- CXX
+		["@type.builtin.c"] = { link = "Keyword" },
 	}
 end
 
