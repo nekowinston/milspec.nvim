@@ -5,6 +5,17 @@ return function(variant)
 
 	local bg = o.transparent_background and "NONE" or c.bg
 
+	-- for better contrast on `lualine_b_diff_*` highlights
+	local highlights = {
+		LuaLineDiffAdd = { link = "Added" },
+		LuaLineDiffChange = { link = "Changed" },
+		LuaLineDiffDelete = { link = "Removed" },
+	}
+
+	for group, tables in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, tables)
+	end
+
 	return {
 		normal = {
 			a = { bg = c.blue, fg = c.bg, gui = "bold" },
