@@ -57,6 +57,20 @@ const variants = {
 }
 # }}}
 
+# fancy expected message
+def 'expected make' [options: list<string>, --limit: int = 20] {
+  let literals = $options | each { $"'($in)'" }
+  let optionCount = $options | length
+
+  if ($optionCount == 2) {
+    $"Expected either: ($literals | str join ' or ')"
+  } else if ($optionCount <= $limit) {
+    $"Expected one of: ($literals | drop | str join ', ') or ($literals | last)"
+  } else {
+    $"Expected one of: ($literals | take $limit | str join ', '), or (($options | length) - $limit) more"
+  }
+}
+
 export def main [
   variant: string = "dark",
   # Whether to use the dark or light variant of Milspec.
@@ -67,13 +81,13 @@ export def main [
   #   - smaller to larger filesizes
 ] {
   if not ($variant in ($variants | columns)) {
-    error make -u {
+    error make {
       msg: "Error generating Milspc color config"
       label: {
         text: $"Invalid variant `($variant)`"
         span: (metadata $variant).span
       }
-      help: $"Expected one of: ($variants | columns | str join ', ')"
+      help: (expected make ($variants | columns))
     }
     return
   }
