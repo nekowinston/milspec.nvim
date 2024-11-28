@@ -82,6 +82,8 @@ function M.get(o, c)
 		RedrawDebugClear = { bg = c.gold },
 		RedrawDebugComposed = { bg = c.green },
 		RedrawDebugRecompose = { bg = c.red },
+
+		LspInlayHint = { fg = c.fgGray },
 	}
 end
 

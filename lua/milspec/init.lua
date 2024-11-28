@@ -38,6 +38,10 @@ local default_options = {
 		--- @type boolean?
 		rainbow_delimiters = true,
 
+		--- Whether to enable [`render-markdown.nvim`](https://github.com/MeanderingProgrammer/render-markdown.nvim) support.
+		--- @type boolean?
+		render_markdown = true,
+
 		--- Whether to enable [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) support.
 		--- @type boolean?
 		treesitter = true,
