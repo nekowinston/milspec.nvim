@@ -6,6 +6,7 @@ pkgs.mkShell {
     lua-language-server
     mustache-go
     nodePackages.prettier
+    nushell
     stylua
     vivid
   ];

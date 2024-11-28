@@ -1,81 +1,81 @@
 # vim:ft=dosini
 [base]
-default          = #{{ fg }}
-unknown-token    = #{{ red }},bold
-commandseparator = #{{ turquoise }}
-redirection      = #{{ turquoise }}
-here-string-tri  = #{{ fgGray }}
-here-string-text = #{{ fgGray }}
-here-string-var  = #{{ fgGray }}
+default          = #{{ colors.fg }}
+unknown-token    = #{{ colors.red }},bold
+commandseparator = #{{ colors.turquoise }}
+redirection      = #{{ colors.turquoise }}
+here-string-tri  = #{{ colors.fgGray }}
+here-string-text = #{{ colors.fgGray }}
+here-string-var  = #{{ colors.fgGray }}
 exec-descriptor  = none
-comment          = #{{ gray }}
-correct-subtle   = #{{ indigo }}
-incorrect-subtle = #{{ vermilion }}
+comment          = #{{ colors.gray }}
+correct-subtle   = #{{ colors.indigo }}
+incorrect-subtle = #{{ colors.vermilion }}
 subtle-separator = none
 subtle-bg        = none
 secondary        =
-recursive-base   = #{{ fg }}
+recursive-base   = #{{ colors.fg }}
 
 [command-point]
-reserved-word     = #{{ violet }}
-subcommand        = #{{ vermilion }}
-alias             = #{{ blue }}
-suffix-alias      = #{{ blue }}
-global-alias      = #{{ blue }}
-builtin           = #{{ violet }}
-function          = #{{ blue }}
-command           = #{{ blue }}
-precommand        = #{{ violet }}
-hashed-command    = #{{ blue }}
-single-sq-bracket = #{{ gold }}
-double-sq-bracket = #{{ gold }}
-double-paren      = #{{ green }}
+reserved-word     = #{{ colors.violet }}
+subcommand        = #{{ colors.vermilion }}
+alias             = #{{ colors.blue }}
+suffix-alias      = #{{ colors.blue }}
+global-alias      = #{{ colors.blue }}
+builtin           = #{{ colors.violet }}
+function          = #{{ colors.blue }}
+command           = #{{ colors.blue }}
+precommand        = #{{ colors.violet }}
+hashed-command    = #{{ colors.blue }}
+single-sq-bracket = #{{ colors.gold }}
+double-sq-bracket = #{{ colors.gold }}
+double-paren      = #{{ colors.green }}
 
 [paths]
-path          = #{{ indigo }}
-pathseparator = #{{ indigo }}
-path-to-dir   = #{{ indigo }}
-globbing      = #{{ rose }}
+path          = #{{ colors.indigo }}
+pathseparator = #{{ colors.indigo }}
+path-to-dir   = #{{ colors.indigo }}
+globbing      = #{{ colors.rose }}
 globbing-ext  = none
 
 [brackets]
 paired-bracket  = bold
-bracket-level-1 = #{{ red }}
-bracket-level-2 = #{{ gold }}
-bracket-level-3 = #{{ cerulean }}
+bracket-level-1 = #{{ colors.red }}
+bracket-level-2 = #{{ colors.gold }}
+bracket-level-3 = #{{ colors.cerulean }}
 
 [arguments]
-single-hyphen-option   = #{{ turquoise }}
-double-hyphen-option   = #{{ turquoise }}
-back-quoted-argument   = #{{ turquoise }}
-single-quoted-argument = #{{ green }}
-double-quoted-argument = #{{ green }}
-dollar-quoted-argument = #{{ green }}
-optarg-string          = #{{ green }}
-optarg-number          = #{{ orange }}
+single-hyphen-option   = #{{ colors.turquoise }}
+double-hyphen-option   = #{{ colors.turquoise }}
+back-quoted-argument   = #{{ colors.turquoise }}
+single-quoted-argument = #{{ colors.green }}
+double-quoted-argument = #{{ colors.green }}
+dollar-quoted-argument = #{{ colors.green }}
+optarg-string          = #{{ colors.green }}
+optarg-number          = #{{ colors.orange }}
 
 [in-string]
-back-dollar-quoted-argument           = #{{ orange }}
-back-or-dollar-double-quoted-argument = #{{ orange }}
+back-dollar-quoted-argument           = #{{ colors.orange }}
+back-or-dollar-double-quoted-argument = #{{ colors.orange }}
 
 [other]
-variable             = #{{ orange }}
+variable             = #{{ colors.orange }}
 assign               = none
 assign-array-bracket = none
 history-expansion    = none
 
 [math]
-mathvar = #{{ rose }}
-mathnum = #{{ orange }}
-matherr = #{{ red }},bold
+mathvar = #{{ colors.rose }}
+mathnum = #{{ colors.orange }}
+matherr = #{{ colors.red }},bold
 
 [for-loop]
-forvar  = #{{ fg }}
-fornum  = #{{ orange }}
-foroper = #{{ blue }}
-forsep  = #{{ blue }}
+forvar  = #{{ colors.fg }}
+fornum  = #{{ colors.orange }}
+foroper = #{{ colors.blue }}
+forsep  = #{{ colors.blue }}
 
 [case]
-case-input       = #{{ orange }}
-case-parentheses = #{{ fg }}
-case-condition   = #{{ violet }}
+case-input       = #{{ colors.orange }}
+case-parentheses = #{{ colors.fg }}
+case-condition   = #{{ colors.violet }}

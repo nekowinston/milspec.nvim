@@ -1,4 +1,5 @@
-# put these at the end of your starship config
+# put these at the end of your starship config:
+
 [palettes.milspec_dark]
 fg = "#ffffff"
 bg = "#1c2127"

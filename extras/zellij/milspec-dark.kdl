@@ -1,0 +1,17 @@
+# vim:ft=kdl
+
+themes {
+  catppuccin-latte {
+    bg "#404854"
+    fg "#ffffff"
+    red "#fa999c"
+    green "#72ca9b"
+    blue "#8abbff"
+    yellow "#fbd065"
+    magenta "#d69fd6"
+    orange "#fbb360"
+    cyan "#7ae1d8"
+    black "#111418"
+    white "#ffffff"
+  }
+}
