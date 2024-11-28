@@ -1,0 +1,54 @@
+{
+  "dark": {
+    "name": "Milspec (dark)",
+    "variant": "dark",
+    "colors": {
+      "fg": "ffffff",
+      "bg": "1c2127",
+      "gray": "c5cbd3",
+      "bgGray": "404854",
+      "fgGray": "d3d8de",
+      "core": "111418",
+      "blue": "8abbff",
+      "green": "72ca9b",
+      "orange": "fbb360",
+      "red": "fa999c",
+      "vermilion": "ff9980",
+      "rose": "ff66a1",
+      "violet": "d69fd6",
+      "indigo": "bdadff",
+      "cerulean": "68c1ee",
+      "turquoise": "7ae1d8",
+      "forest": "62d96b",
+      "lime": "d4f17e",
+      "gold": "fbd065",
+      "sepia": "d0b090"
+    }
+  },
+  "light": {
+    "name": "Milspec (light)",
+    "variant": "light",
+    "colors": {
+      "fg": "111418",
+      "bg": "f6f7f9",
+      "gray": "5f6b7c",
+      "bgGray": "d3d8de",
+      "fgGray": "404854",
+      "core": "ffffff",
+      "blue": "2d72d2",
+      "green": "238551",
+      "orange": "c87619",
+      "red": "cd4246",
+      "vermilion": "d33d17",
+      "rose": "db2c6f",
+      "violet": "9d3f9d",
+      "indigo": "7961db",
+      "cerulean": "147eb3",
+      "turquoise": "00a396",
+      "forest": "29a634",
+      "lime": "8eb125",
+      "gold": "d1980b",
+      "sepia": "946638"
+    }
+  }
+}
