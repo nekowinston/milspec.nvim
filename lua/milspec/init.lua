@@ -77,11 +77,7 @@ M.load = function(variant)
 		M.setup()
 	end
 
-	if variant == nil then
-		variant = vim.o.background
-	end
-
-	require("milspec.compiler").load_compiled(M.options, variant)
+	require("milspec.compiler").load(M.options, variant or vim.o.background)
 end
 
 --- @type fun(conf: MilspecOptions?): nil
