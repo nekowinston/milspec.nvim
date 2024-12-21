@@ -1,8 +1,8 @@
 local M = {}
 
--- fallback
----@diagnostic disable-next-line: undefined-global
-local bit = bit or bit32
+-- fallbacks
+local bit = bit or bit32 ---@diagnostic disable-line: undefined-global
+local uv = vim.uv or vim.loop
 
 M.path_sep = vim.fn.has("unix") and "/" or "\\"
 M.cache_dir = vim.fn.stdpath("cache") .. M.path_sep .. "milspec.nvim"
@@ -81,9 +81,6 @@ end, true)
 ]]
 
 		local chunked, err = loadstring(text)()
-		local fp = get_fp_for_opts(options, variant_name)
-		local file = assert(io.open(fp, "wb"), "Permission denied while writing milspec.nvim cache to " .. fp)
-
 		if not chunked then
 			vim.print("Failed to parse user options; here is the error that was caught:\n" .. err)
 			return
@@ -94,8 +91,11 @@ end, true)
 			load(chunked)()
 		end
 
-		file:write(chunked)
-		file:close()
+		local fp = get_fp_for_opts(options, variant_name)
+		local fd = assert(uv.fs_open(fp, "w", 438), "Permission denied while writing milspec.nvim cache to " .. fp)
+
+		uv.fs_write(fd, chunked)
+		uv.fs_close(fd)
 	end
 end
 
