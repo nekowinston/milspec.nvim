@@ -58,7 +58,10 @@ const variants = {
 # }}}
 
 # fancy expected message
-def 'expected make' [options: list<string>, --limit: int = 20] {
+def 'expected make' [
+  options: list<string>
+  --limit: int = 20
+] {
   let literals = $options | each { $"'($in)'" }
   let optionCount = $options | length
 
@@ -72,7 +75,7 @@ def 'expected make' [options: list<string>, --limit: int = 20] {
 }
 
 export def main [
-  variant: string = "dark",
+  variant: string = "dark"
   # Whether to use the dark or light variant of Milspec.
   --relative (-R)
   # Whether to use colors from green to red, to indicate:
@@ -243,8 +246,8 @@ export def main [
 
     ### SYNTAX ERROR INDICATORS ###
     shape_garbage: {
-      fg: $colors.bg,
-      bg: $colors.red,
+      fg: $colors.bg
+      bg: $colors.red
       attr: b
     }
 
