@@ -15,8 +15,8 @@ M.dump = function(table)
 	return vim.inspect(table, { newline = "", indent = "" })
 end
 
--- Generates a unique number hash from either strings or tables (by `dump`ing them first).
--- Uses the djb2 hashing algorithm
+-- Generates a unique number hash from strings.
+-- Uses the djb2 hashing algorithm.
 ---@param input string
 ---@return number
 M.hash = function(input)
@@ -56,7 +56,7 @@ local function get_cache_fp(options, variant_name)
 	return M.cache_dir .. M.path_sep .. tostring(hash) .. "-" .. variant_name
 end
 
--- Compiles both variants and caches them in the `M.cache_dir`
+-- Compiles both variants and caches them in the `M.cache_dir`.
 ---@param options          MilspecOptions
 ---@param immediately_load MilspecVariant? when specified, this variant is loaded while compiling.
 ---@return nil
@@ -68,22 +68,21 @@ M.compile = function(options, immediately_load)
 	for _, variant_name in pairs({ "dark", "light" }) do
 		local variant = require("milspec.colors").get_variant(variant_name)
 
-		-- this should collect all file names in `./highlights/*.lua`
-		local def_files = { "editor", "syntax" }
-		-- collect all definition files
 		--- @type table<string, vim.api.keyset.highlight>
 		local highlights = {}
-		for _, def in pairs(def_files) do
-			highlights =
-				vim.tbl_extend("force", highlights, require("milspec.highlights." .. def).get(options, variant))
+
+		-- this should collect all file names in `./highlights/*.lua`
+		local def_files = { "editor", "syntax" }
+
+		-- collect all core definition files
+		for _, def_name in pairs(def_files) do
+			local defs = require("milspec.highlights." .. def_name).get(options, variant)
+			highlights = vim.tbl_extend("force", highlights, defs)
 		end
 		-- and enabled plugins
-		for plugin in pairs(options.plugins) do
-			highlights = vim.tbl_extend(
-				"force",
-				highlights,
-				require("milspec.highlights.plugins." .. plugin).get(options, variant)
-			)
+		for plugin_name in pairs(options.plugins) do
+			local defs = require("milspec.highlights.plugins." .. plugin_name).get(options, variant)
+			highlights = vim.tbl_extend("force", highlights, defs)
 		end
 
 		-- this should collect all file names in `./globals/*.lua`
@@ -91,7 +90,8 @@ M.compile = function(options, immediately_load)
 		-- collect all vim.g globals
 		local globals = {}
 		for _, global in pairs(global_files) do
-			globals = vim.tbl_extend("force", globals, require("milspec.globals." .. global).get(options, variant))
+			local defs = require("milspec.globals." .. global).get(options, variant)
+			globals = vim.tbl_extend("force", globals, defs)
 		end
 
 		local cmds = ""
