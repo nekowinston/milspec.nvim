@@ -77,35 +77,7 @@ M.load = function(variant)
 		M.setup()
 	end
 
-	M.variant = require("milspec.colors").get_variant(variant)
-
-	vim.cmd("hi clear")
-	if vim.fn.exists("syntax_on") then
-		vim.api.nvim_command("syntax reset")
-	end
-
-	vim.opt.termguicolors = true
-
-	require("milspec.groups.terminal").apply(M.options, M.variant)
-
-	for group, tables in pairs(require("milspec.groups.editor").get(M.options, M.variant)) do
-		vim.api.nvim_set_hl(0, group, tables)
-	end
-
-	for group, tables in pairs(require("milspec.groups.syntax").get(M.options, M.variant)) do
-		vim.api.nvim_set_hl(0, group, tables)
-	end
-
-	for plugin in pairs(M.options.plugins) do
-		--- @type table<string, vim.api.keyset.highlight>
-		local defs = require("milspec.groups.plugins." .. plugin).get(M.options, M.variant)
-
-		for group, tables in pairs(defs) do
-			vim.api.nvim_set_hl(0, group, tables)
-		end
-	end
-
-	vim.g.colors_name = "milspec"
+	require("milspec.compiler").load_compiled(M.options, variant or "dark")
 end
 
 --- @type fun(conf: MilspecOptions?): nil
