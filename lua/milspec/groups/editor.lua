@@ -33,7 +33,7 @@ function M.get(o, c)
 		SignColumn = { fg = c.gray },
 		FoldColumn = { link = "Folded" },
 		Folded = { fg = c.gray },
-		Conceal = { fg = c.bgGray },
+		Conceal = { fg = c.rose },
 
 		StatusLine = { fg = c.fgGray, bg = bg },
 		StatusLineNC = { link = "StatusLine" },
@@ -42,7 +42,7 @@ function M.get(o, c)
 		WinSeparator = { fg = c.bgGray },
 
 		NonText = { fg = c.bgGray },
-		SpecialKey = { link = "NonText" },
+		SpecialKey = { fg = c.violet },
 		EndOfBuffer = { fg = o.show_eob and c.bgGray or c.bg },
 
 		Directory = { fg = c.turquoise },
