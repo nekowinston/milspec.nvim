@@ -15,6 +15,9 @@ M.get = function(o, c)
 		tomlTable = { fg = c.gold },
 		tomlDotInKey = { link = "Delimiter" },
 
+		-- ditto for Nix
+		["@variable.member.nix"] = { link = "@property" },
+
 		-- CXX
 		["@type.builtin.c"] = { link = "Keyword" },
 
